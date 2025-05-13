@@ -1,9 +1,13 @@
 <script setup>
+import { useRouter } from 'vue-router'
+
+
+const router = useRouter()
 </script>
 
 <template>
   <div>
-   <h1>Proyecto Vacio</h1>
+   <h1>Proyecto Vacio v1</h1>
   </div>
 
 </template>
