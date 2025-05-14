@@ -8,6 +8,7 @@ const router = useRouter()
 <template>
   <div>
    <h1>Proyecto Vacio v1</h1>
+   <h2>Proyecto Esto es GIT?</h2>
   </div>
 
 </template>
