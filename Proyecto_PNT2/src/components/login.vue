@@ -11,7 +11,8 @@
         Contraseña
         <input v-model="password" type="password" required />
       </label>
-      <button type="submit">Entrar</button>
+      <button type="submit"><router-link to="/rent">Entrar</router-link></button>
+      
     </form>
   </div>
 </template>
@@ -27,7 +28,7 @@ const password = ref('')
 function login() {
   if (username.value === 'admin' && password.value === '1234') {
     emit('login-success')
-  } else {
+  } else { 
     alert('Credenciales incorrectas')
   }
 }
