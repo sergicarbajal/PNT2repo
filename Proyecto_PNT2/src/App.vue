@@ -1,18 +1,25 @@
-<script setup>
-import { useRouter } from 'vue-router'
-
-
-const router = useRouter()
-</script>
 
 <template>
-  <div>
-   <h1>Proyecto Vacio v1</h1>
-   <h2>Proyecto Esto es GIT?</h2>
-  </div>
+<div>
+ <!-- Mostrar login si no está autorizado -->
+<LoginForm v-if="!isAuthorized" @login-success="handleLoginSuccess" />
 
+ <!-- Mostrar contenido de rutas si está autorizado -->
+ <div v-else>
+ <p>✅ Bienvenido, estás autorizado.</p>
+ <router-view />
+ </div>
+ </div>
 </template>
 
-<style scoped>
+<script setup>
+import { ref } from 'vue'
+import LoginForm from './components/Login.vue'
 
-</style>
+const isAuthorized = ref(false)
+
+function handleLoginSuccess() 
+{
+   isAuthorized.value = true
+}
+</script>
